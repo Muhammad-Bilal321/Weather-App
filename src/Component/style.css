@@ -1,0 +1,64 @@
+/* Add these CSS styles to your style.css file */
+
+.centered-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* Ensure the overflow is hidden to keep wave animations inside */
+}
+
+.container {
+  background-color: #a5ccd6;
+  padding: 20px;
+  text-align: center; /* Center text content inside the container */
+  position: relative; /* Add this position to allow for absolute positioning */
+  z-index: 1; /* Ensure the container is above the waves */
+}
+
+
+/* Adjust the wave animation styles */
+.wave {
+  opacity: 0.3;
+  position: absolute;
+  top: 160%; /* Adjust the top position to keep the wave inside the container */
+  left: 140%;
+  background: white;
+  width: 50rem;
+  height: 50rem;
+  margin-left: -25rem;
+  margin-top: -20rem;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+  z-index: -1; /* Move the waves behind the container */
+}
+
+.wave.three {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.2;
+  
+}
+
+.wave.two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.3;
+}
+
+
+@keyframes drift {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+
+
+
+
+
